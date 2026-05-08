@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: tradeforge
+  datasource:
+    url: jdbc:postgresql://localhost:5432/tradeforge
+    username: tradeforge
+    password: tradeforge
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+  flyway:
+    enabled: true
+
+server:
+  port: 8080
