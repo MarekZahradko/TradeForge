@@ -12,6 +12,22 @@ spring:
     show-sql: false
   flyway:
     enabled: true
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: TradeForgeApp
+            client-secret: h46mwEDwclhlSvxYzYTW4Q2lUJATMfle
+            authorization-grant-type: authorization_code
+            redirect-uri: http://localhost:8080/login/oauth2/code/keycloak
+        provider:
+          keycloak:
+            issuer-uri: http://127.0.0.1:8080/realms/tradeforge
+            user-name-attribute: preferred_username
+      resourceserver:
+        jwt:
+          issuer-uri: http://127.0.0.1:8080/realms/tradeforge
 
 server:
   port: 8080
